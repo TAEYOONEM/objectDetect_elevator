@@ -1,6 +1,5 @@
 
 from serial import Serial 
-import time
 
 class Sercom(Serial) :
     def __init__(self,prt,br) :
@@ -16,14 +15,5 @@ class Sercom(Serial) :
 
     def readln(self) :
         return self.readline().decode().rstrip('\r\n')
-
-    def write_up(self, uplist) :
-        uplist.sort(reverse=True)
-        self.write('u'.encode())
-        if self.read_char() == 'o' :
-            for i in uplist :
-                self.write_id(i+2)
-            self.write_end()
-
 
 

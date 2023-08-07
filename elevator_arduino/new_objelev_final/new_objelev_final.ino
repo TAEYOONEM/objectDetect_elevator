@@ -14,6 +14,7 @@ int num[10][7] = {
   {1,1,1,0,0,1,1}  //9
 };
 
+
 String state = "STOP";
 bool next_floors[MAX_FLOOR_PLUSONE][2];
 int now_floor = 1;
@@ -29,7 +30,7 @@ void setup() {
   for(int i = 0; i < 7; i++)
     pinMode(seg[i],OUTPUT);
   
-  for(int i=0;i<MAX_FLOOR_PLUSONE;i++){
+  for(int i=1;i<MAX_FLOOR_PLUSONE;i++){
     for(int j=0;j<2;j++)
       next_floors[i][j] = false;
   }
@@ -41,17 +42,13 @@ void loop() {
   char ch; 
   
   if(Serial.available()){
-//    Serial.println("start"); // #001:jjunee update
     ch = Serial.read();
     input = Serial.parseInt();
-//    Serial.println(input); // #001:jjunee update
     if(input > 0){
       if(ch == 'u'){
-//        Serial.println("Up IN"); // #001:jjunee update
         get_nextfloor(input,true);
       }
       else if(ch == 'd'){
-//        Serial.println("Down IN"); // #001:jjunee update
         get_nextfloor(input,false);
       }
     }
@@ -61,13 +58,14 @@ void loop() {
 }
 
 void get_nextfloor(long input,bool updown){
+  // 정지일때 들어온 신호를 우선 처리
   if(state == "STOP"){
     next_floor = input;
     Serial.print("Next floor is ");
     Serial.println(next_floor);
   }
   
-  next_floors[input][0] = true; // 목표층수 
+  next_floors[input][0] = true; // 목적지 업데이트  
   if(updown)
     next_floors[input][1] = true; // 업
   else if(!updown)
@@ -95,11 +93,13 @@ void move_elevator(){
   } 
   else if(now_floor == next_floor){ 
     if(state == "UP"){ 
-      if(next_floors[next_floor][1]){ // 같은 방향이면 방문  
+      // 같은 방향이면 방문
+      if(next_floors[next_floor][1]){ 
         next_floors[next_floor][0] = false;    
         Serial.print("OPEN : ");
         Serial.println(now_floor);
         Serial.println("What floor do you want to go");
+        // 방문한 사람의 목적지 업데이트 
         while(true){
           if(Serial.available()){
             long input = Serial.parseInt();
@@ -113,6 +113,7 @@ void move_elevator(){
           }
         }
       }
+      // 같은 방향에 신호가 있는지 확인 / 있으면 다음 목적지
       for(int i=1;now_floor+i<MAX_FLOOR_PLUSONE;i++){
         if(next_floors[now_floor+i][0]){
           Serial.println("keep going");
@@ -122,6 +123,7 @@ void move_elevator(){
           return;
         }
       } 
+      // 반대 방향에 신호가 있는지 확인 / 있으면 다음 목적지
       for(int i=0; now_floor-i>0;i++){
         if(next_floors[now_floor-i][0]){
           Serial.println("Change direction");          
@@ -134,11 +136,13 @@ void move_elevator(){
       }
     }
     else if(state == "DOWN"){
-      if(!next_floors[next_floor][1]){ // 같은 방향이면 방문 
+      // 같은 방향이면 방문 
+      if(!next_floors[next_floor][1]){ 
         next_floors[next_floor][0] = false;
         Serial.print("OPEN : ");
         Serial.println(now_floor);
         Serial.println("What floor do you want to go");
+        // 방문한 사람의 목적지 업데이트 
         while(true){
           if(Serial.available()){
             long input = Serial.parseInt();
@@ -151,7 +155,8 @@ void move_elevator(){
             }
           }
         }      
-      }      
+      }
+      // 같은 방향에 신호가 있는지 확인 / 있으면 다음 목적지      
       for(int i=1;now_floor-i>0;i++){
         if(next_floors[now_floor-i][0]){
           Serial.println("keep going");
@@ -161,6 +166,7 @@ void move_elevator(){
           return;
         }
       }
+     // 반대 방향에 신호가 있는지 확인 / 있으면 다음 목적지
      for(int i=0; now_floor+i<MAX_FLOOR_PLUSONE;i++){
         if(next_floors[now_floor+i][0]){
           Serial.println("Change direction");          
@@ -172,6 +178,7 @@ void move_elevator(){
         }
       }
     }
+  // 목적지가 없으면 정지
   state = "STOP";
   }
 }
