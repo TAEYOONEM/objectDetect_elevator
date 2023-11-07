@@ -23,7 +23,7 @@ Yolo 알고리즘을 사용하였습니다.
 <img src = "https://raw.githubusercontent.com/TAEYOONEM/objectDetect_elevator/main/img/DataSetCode2.png" width = 500 height = 400>
 
 5. 데이터 모듈을 만듭니다.
-- 1. TrainDataSet.ipynb을 Google Colab에서 실행합니다.
+-1. TrainDataSet.ipynb을 Google Colab에서 실행합니다.
 <img src = "https://raw.githubusercontent.com/TAEYOONEM/objectDetect_elevator/main/img/TrainDataSet.png" width = 500 height = 400>
 
 ``` python
@@ -35,7 +35,7 @@ dataset = project.version(1).download("yolov8")
 
 데이터셋 다운로드 코드를 사용합니다.
 
-- 2. best.pt을 다운로드 합니다.
+-2. best.pt을 다운로드 합니다.
 
 
 카메라
