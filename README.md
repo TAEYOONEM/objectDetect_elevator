@@ -60,8 +60,7 @@ DB
 기본적인 엘리베이터 기능도 구현되야 한다고 생각했습니다. <br>
 아래는 제가 생각하는 엘리베이터 알고리즘 입니다. 
 아두이노 기준으로 작성하였습니다. 
-
-![엘리베이터 알고리즘](https://raw.githubusercontent.com/TaeYoonSS/objectDetect_elevator/main/img/elevator.drawio.png)
+<img src = "https://raw.githubusercontent.com/TAEYOONEM/objectDetect_elevator/main/img/elevator.drawio.jpg" width = 500 >
 
 
 객체인식 개선
@@ -71,6 +70,6 @@ DB
 1. 프로세스 분할 : 이미지 입력, Yolo모델을 이용한 객체인식, 영상 출력
 2. 모델링 된 프레임을 큐에 저장하여 다른 프로세스와 데이터를 공유하였습니다.
 
-<img src = "https://raw.githubusercontent.com/TAEYOONEM/objectDetect_elevator/main/img/multiprocess.jpg" >
-<img src = "https://raw.githubusercontent.com/TAEYOONEM/objectDetect_elevator/main/img/multithread.png" >
+<img src = "https://raw.githubusercontent.com/TAEYOONEM/objectDetect_elevator/main/img/multiprocess.jpg" width = 500 height = 400>
+<img src = "https://raw.githubusercontent.com/TAEYOONEM/objectDetect_elevator/main/img/multithread.png" width = 500 height = 400>
 
