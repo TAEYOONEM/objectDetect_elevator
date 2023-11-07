@@ -22,8 +22,7 @@ Yolo 알고리즘을 사용하였습니다.
 <img src = "https://raw.githubusercontent.com/TAEYOONEM/objectDetect_elevator/main/img/DataSetCode.png" width = 500 height = 400>
 <img src = "https://raw.githubusercontent.com/TAEYOONEM/objectDetect_elevator/main/img/DataSetCode2.png" width = 500 height = 400>
 
-5. 데이터 모듈을 만듭니다.
--1. TrainDataSet.ipynb을 Google Colab에서 실행합니다.
+5. 데이터 모듈을 만듭니다. <br> TrainDataSet.ipynb을 Google Colab에서 실행합니다.
 <img src = "https://raw.githubusercontent.com/TAEYOONEM/objectDetect_elevator/main/img/TrainDataSet.png" width = 500 height = 400>
 
 ``` python
@@ -35,7 +34,7 @@ dataset = project.version(1).download("yolov8")
 
 데이터셋 다운로드 코드를 사용합니다.
 
--2. best.pt을 다운로드 합니다.
+best.pt을 다운로드 합니다.
 
 
 카메라
@@ -50,8 +49,7 @@ DB
 객체인식을 통해 반환된 라벨을 함수의 매개변수로 하여 그에 맞는 결과를 반환합니다.
 
 객체인식
-- 프레임을 모델화합니다.
-인식된 객체들의 클래스의 숫자나 이름을 반환합니다.
+- 프레임을 모델화합니다. 인식된 객체들의 클래스의 숫자나 이름을 반환합니다.
 
 통신
 - 엘리베이터 제어를 위한 시리얼 통신 모듈입니다.
@@ -59,9 +57,9 @@ DB
 
 엘리베이터
 ----
-기본적인 엘리베이터 기능도 구현되야 한다고 생각했습니다. 
-아래는 제가 생각하는 엘리베이터 알고리즘 입니다.
-아두이노 기준으로 작성하였습니다.
+기본적인 엘리베이터 기능도 구현되야 한다고 생각했습니다. <br>
+아래는 제가 생각하는 엘리베이터 알고리즘 입니다. 
+아두이노 기준으로 작성하였습니다. 
 
 ![엘리베이터 알고리즘](https://raw.githubusercontent.com/TaeYoonSS/objectDetect_elevator/main/img/elevator.drawio.png)
 
@@ -73,7 +71,6 @@ DB
 1. 프로세스 분할 : 이미지 입력, Yolo모델을 이용한 객체인식, 영상 출력
 2. 모델링 된 프레임을 큐에 저장하여 다른 프로세스와 데이터를 공유하였습니다.
 
-<img src=>
-<img src=>
-
+<img src = "https://raw.githubusercontent.com/TAEYOONEM/objectDetect_elevator/main/img/multiprocess.png" width = 500 height = 400>
+<img src = "https://raw.githubusercontent.com/TAEYOONEM/objectDetect_elevator/main/img/multithread.png" width = 500 height = 400>
 
