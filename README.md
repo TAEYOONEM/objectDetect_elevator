@@ -12,15 +12,30 @@ Yolo 알고리즘을 사용하였습니다.
 <img src = "https://raw.githubusercontent.com/TAEYOONEM/objectDetect_elevator/main/img/UploadDataSet.png" width = 500 height = 400>
 
 2. 박스를 만들어 라벨링합니다.  
-<img src>
+<img src = "https://raw.githubusercontent.com/TAEYOONEM/objectDetect_elevator/main/img/AnnotateDataSet.png" width = 500 height = 400>
 
 3. 데이터셋을 생성합니다.
-<img src = >
-<img src = >
+<img src = "https://raw.githubusercontent.com/TAEYOONEM/objectDetect_elevator/main/img/GenerateDataSet.png" width = 500 height = 400>
+<img src = "https://raw.githubusercontent.com/TAEYOONEM/objectDetect_elevator/main/img/GenerateDataSet2.png" width = 500 height = 400>
 
 4. 데이터셋을 추출합니다.
-<img src =>
-<img src = >
+<img src = "https://raw.githubusercontent.com/TAEYOONEM/objectDetect_elevator/main/img/DataSetCode.png" width = 500 height = 400>
+<img src = "https://raw.githubusercontent.com/TAEYOONEM/objectDetect_elevator/main/img/DataSetCode2.png" width = 500 height = 400>
+
+5. 데이터 모듈을 만듭니다.
+- 1. TrainDataSet.ipynb을 Google Colab에서 실행합니다.
+<img src = "https://raw.githubusercontent.com/TAEYOONEM/objectDetect_elevator/main/img/TrainDataSet.png" width = 500 height = 400>
+
+``` python
+from roboflow import Roboflow
+rf = Roboflow(api_key="")
+project = rf.workspace("class-raify").project("project_customdataset")
+dataset = project.version(1).download("yolov8")
+```
+
+데이터셋 다운로드 코드를 사용합니다.
+
+- 2. best.pt을 다운로드 합니다.
 
 
 카메라
