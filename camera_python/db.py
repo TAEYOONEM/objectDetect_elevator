@@ -42,7 +42,7 @@ class ResidentInfo :
         self.conn.close()
 
 if __name__ == "__main__" :
-    list_of_ids = ['Warning']
+    list_of_ids = ['홍길동']
     db = ResidentInfo(user = 'root', passwd='12345', host='localhost', db='resident')
     q = db.get_query(list_of_ids)
     # q = "SELECT floor FROM floors WHERE name = 'Warning'"
