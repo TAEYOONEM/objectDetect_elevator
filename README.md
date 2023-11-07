@@ -70,6 +70,6 @@ DB
 1. 프로세스 분할 : 이미지 입력, Yolo모델을 이용한 객체인식, 영상 출력
 2. 모델링 된 프레임을 큐에 저장하여 다른 프로세스와 데이터를 공유하였습니다.
 
-<img src = "https://raw.githubusercontent.com/TAEYOONEM/objectDetect_elevator/main/img/multiprocess.jpg" width = 500 height = 200>
+<img src = "https://raw.githubusercontent.com/TAEYOONEM/objectDetect_elevator/main/img/multiprocess.jpg" width = 500 height = 250>
 
 
