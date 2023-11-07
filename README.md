@@ -9,7 +9,7 @@ Yolo 알고리즘을 사용하였습니다.
 [Roboflow](https://roboflow.com/)
 
 1. train, validation, test로 분류된 이미지 파일폴더를 업로드 합니다.
-<img src>
+<img src = "https://raw.githubusercontent.com/TAEYOONEM/objectDetect_elevator/main/img/UploadDataSet.png" width = 400 height = 400>
 
 2. 박스를 만들어 라벨링합니다.  
 <img src>
